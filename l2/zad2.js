@@ -8,6 +8,7 @@ const obj = {
   name: "deeecode",
   age: 80,
   language: "javascript",
+  "0": "zero",
 }
 
 const myKey = "language"
@@ -23,6 +24,7 @@ console.log(obj);
 // javascript
 
 const num = obj[0]
+console.log(num)
 let obj1 = {};
 obj1[1337] = "cześć";
 
