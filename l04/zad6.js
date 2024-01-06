@@ -24,8 +24,17 @@ Tree.prototype[Symbol.iterator] = function*() {
   if (this.right) yield* this.right;
 }
 
-function* helper(root) {
-  let queue = [root]
+var example = new Tree(1,
+  new Tree(2, new Tree(3)), new Tree(4));
+console.log("inorder traversal")
+for (let e of example) {
+  console.log(e)
+}
+
+
+
+Tree.prototype[Symbol.iterator] = function*() {
+  let queue = [this]
   while (queue.length > 0) {
     let cur = queue.shift()
     yield cur.value
@@ -38,13 +47,24 @@ function* helper(root) {
   }
 }
 
-var example = new Tree(1,
-  new Tree(2, new Tree(3)), new Tree(4));
-console.log("inorder traversal")
+console.log("level-order traversal")
 for (let e of example) {
   console.log(e)
 }
-console.log("level-order traversal")
-for (let e of helper(example)) {
-  console.log(e)
-}
+// function* helper(root) {
+//   let queue = [root]
+//   while (queue.length > 0) {
+//     let cur = queue.shift()
+//     yield cur.value
+//     if (cur.left) {
+//       queue.push(cur.left);
+//     }
+//     if (cur.right) {
+//       queue.push(cur.right);
+//     }
+//   }
+// }
+
+// for (let e of helper(example)) {
+//   console.log(e)
+// }

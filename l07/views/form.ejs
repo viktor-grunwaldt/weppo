@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <title>Formularz zgłoszenia</title>
+</head>
+
+<body>
+   <h1>Formularz zgłoszenia</h1>
+   <% if (locals.error) { %>
+      <p style="color: red;">
+         <%= locals.error %>
+      </p>
+      <% } %>
+         <form action="/register" method="post">
+            <label for="firstName">Imię:</label><br>
+            <input type="text" id="firstName" name="firstName" required=true><br>
+            <label for="lastName">Nazwisko:</label><br>
+            <input type="text" id="lastName" name="lastName" required=true><br>
+            <label for="subjectName">Nazwa zajęć:</label><br>
+            <input type="text" id="subjectName" name="subjectName" required=true><br>
+            <label for="tasks">Deklaracja:</label><br>
+            <input type="text" id="tasks" name="tasks" required=false><br>
+            <!-- Dodaj więcej pól dla kolejnych zadań -->
+            <input type="submit" value="Zgłoś" required=true>
+         </form>
+</body>
+
+</html>

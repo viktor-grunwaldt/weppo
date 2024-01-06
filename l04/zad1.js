@@ -12,3 +12,6 @@ const getLastProto = (o) => {
 console.log(getLastProto("hello"))
 console.log(getLastProto(getLastProto))
 console.log(getLastProto(Object))
+
+console.log(getLastProto(getLastProto) === getLastProto("hello"))
+console.log(getLastProto(Object) === getLastProto("hello"))

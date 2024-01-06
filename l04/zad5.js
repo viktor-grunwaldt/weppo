@@ -7,7 +7,7 @@ class Foo {
   }
 
   #Qux() {
-    console.log("Hello from Qux!")
+    console.log("Foo: Hello from Qux!")
   }
 }
 
@@ -19,7 +19,7 @@ foo.Bar() // Wypisze "Hello from Qux!"
 
 let Foo_factory = () => {
   function Qux() {
-    console.log("Hello from Qux!")
+    console.log("Foo2: Hello from Qux!")
   }
   function Bar() {
     Qux()
